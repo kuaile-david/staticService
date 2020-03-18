@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"
+	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<div id="app">
+		<div class="col-md-12 text-white bg-dark">
+			<ul class="nav justify-content-end">
+				<li class="nav-item"><a class="nav-link" href="#"
+					data-toggle="modal" data-target="#exampleModal">登录</a></li>
+				<li class="nav-item"><a class="nav-link" href="./register.html">注册</a></li>
+				<li class="nav-item"><a class="nav-link disabled"
+					href="./index#">首页</a></li>
+			</ul>
+		</div>
+		<div id="left_append" class="jumbotron">
+			<h1 class="display-4">Hello, world!</h1>
+			<p class="lead">This is a simple hero unit, a simple
+				jumbotron-style component for calling extra attention to featured
+				content or information.</p>
+			<hr class="my-4">
+			<p>It uses utility classes for typography and spacing to space
+				content out within the larger container.</p>
+			<a class="btn btn-primary btn-lg" href="#" role="button">Learn
+				more</a>
+		</div>
+		<div class="container col-11">
+			<div class="row">
+				<div class="col-3 shadow-lg p-3 mb-5 bg-white rounded">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<button type="button" class="btn btn-secondary btn-lg btn-block"
+							v-for="item in menus">{{item.name}}</button>
+					</div>
+				</div>
+				<div class="col-9 ">
+					<div class="card mb-3 shadow p-3 mb-5 bg-white rounded"
+						v-for="item in articles">
+						<img src="..." class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">{{item.title}}</h5>
+							<p class="card-text">{{item.body}}</p>
+							<p class="card-text">
+								<small class="text-muted">{{item.time}}</small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fixed-bottom d-flex justify-content-end"
+			style="bottom: 80px; left: 80px;">
+			<div class="btn-group dropup" role="group"
+				aria-label="Button group with nested dropdown">
+
+				<button id="btnGroupDrop1" type="button"
+					class="btn btn-dark dropdown-toggle" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"></button>
+				<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+					<a class="dropdown-item btn btn-link" href="#"><img
+						width="30px" height="30px" alt=""
+						src="./icons/box-arrow-right.svg" /> 收&emsp;藏</a> <a
+						class="dropdown-item btn btn-link" href="#"><img width="30px"
+						height="30px" alt="" src="./icons/arrow-bar-up.svg" /> 发&emsp;帖</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12 text-white bg-dark">
+			<ul class="nav justify-content-end">
+				<li class="nav-item"><a class="nav-link active" href="#">Active</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+				<li class="nav-item"><a class="nav-link disabled" href="#"
+					tabindex="-1" aria-disabled="true">Disabled</a></li>
+			</ul>
+		</div>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">登 录</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form action="/login" method="get">
+							<div class="form-group">
+								<label for="InputUsername">用户名</label> <input type="text"
+									class="form-control" id="InputUsername"
+									aria-describedby="emailHelp"> <small id="emailHelp"
+									class="form-text text-muted">We'll never share your
+									email with anyone else.</small>
+							</div>
+							<div class="form-group">
+								<label for="InputPassword">密&emsp;码</label> <input
+									type="password" class="form-control" id="InputPassword">
+								<small id="emailHelp" class="form-text text-muted">We'll
+									never share your email with anyone else.</small>
+							</div>
+							<div class="form-group form-check">
+								<input type="checkbox" class="form-check-input"
+									id="exampleCheck1"> <label class="form-check-label"
+									for="exampleCheck1">Check me out</label>
+							</div>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	const app = new Vue({
+		el : '#app',
+		data : {
+			nowTime : new Date().getTime,
+			menus : [ {
+				name : '正在加载菜单...'
+			} ],
+			articles : [ {
+				title : ' 正在获取数据。。。',
+				body : '正在获取数据。。。',
+				time : this.nowTime,
+			} ],
+		},
+		method : {
+
+		}
+	})
+</script>
+</html>
