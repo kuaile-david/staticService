@@ -10,6 +10,7 @@ public class StaticServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StaticServiceApplication.class, args);
+		System.out.println();
 	}
 
 }
