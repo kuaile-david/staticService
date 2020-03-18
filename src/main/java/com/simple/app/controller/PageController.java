@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PageController {
 
 	@RequestMapping("{name}")
-	public String redict(@PathVariable("name") 
-						String name) {
+	public String redict(@PathVariable("name") String name) {
 		return name;
 	}
 	
